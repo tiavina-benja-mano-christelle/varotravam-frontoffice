@@ -101,7 +101,7 @@ function Annonces() {
 
         <div className="page-annonce" style={{ marginTop: '60px' }}>
           <div className="annonce-filtre">
-            <div class="filtre">
+            <div className="filtre">
 
               <Accordion defaultExpanded>
                 <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1-content" id="panel1-header">

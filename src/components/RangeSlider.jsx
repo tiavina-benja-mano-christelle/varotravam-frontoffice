@@ -15,7 +15,7 @@ function RangeSlider({ value, onChange, max }) {
   };
 
   return (
-    <Box sx={{ width: '70%' }, { margin: '0 20px' }}>
+    <Box sx={{ width: '70%', margin: '0 20px' }}>
       <Slider
         getAriaLabel={() => 'Temperature range'}
         value={value}

@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
-import FooterPage from './components/FooterPage';
 import DetailsAnnonces from './pages/DetailsAnnonces';
 import Annonces from './pages/Annonces';
 import Message from './pages/Message';
