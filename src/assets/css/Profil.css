@@ -1,0 +1,30 @@
+.Profil .link {
+    cursor: pointer;
+}
+
+.Profil .titre-liste{
+    font-weight: 500;
+    border-bottom: 1px solid #f4f4f4;
+    background-color: #f4f4f4;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.Profil .titre-liste span{
+    margin-left: 15px;
+}
+
+.Profil .titre-liste span input[type="text"]{
+    width: 97%;
+    border: none;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.Profil .titre-liste span input[type="submit"]{
+    border: 1px solid #f4f4f4;
+    padding: 6px;
+    background-color: #dfdfdf;
+    color: white;
+    border-radius: 5px;
+}
