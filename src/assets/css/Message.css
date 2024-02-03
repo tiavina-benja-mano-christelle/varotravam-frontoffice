@@ -1,0 +1,128 @@
+.message-container {
+    display: grid;
+    grid-template-columns: 30% 70%;   
+    
+}
+.left{
+    height: #f4f4f4;
+    border-right: 1px solid #f0f0f0;
+}
+.message-global {
+    overflow-y: scroll;
+}
+
+.right{
+    background-color: rgb(180, 180, 180);
+    height: 100vh;
+}
+.message-global{
+    background-color: white;
+    height: 100vh;
+}
+
+.message-left{
+    margin-top: 2px;
+    margin-left: 10px;
+    width:fit-content;
+    max-width:45%;
+    padding: 10px;
+    background-color: rgb(236, 236, 236);
+    border-radius: 10px;
+    color: rgb(45, 45, 45);
+}
+
+.message-right{
+    display: grid;
+    grid-template-columns: auto 50%;
+   
+}
+.message-right div{
+    color: white;
+    margin-right: 10px;
+    background-color: rgb(10, 180, 236);
+    margin-top:2px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.message-head{
+    padding: 15px 50px;
+    height: 55px;
+    background-color: rgb(205, 205, 205);
+    border-bottom: 2px solid #f4f4f4;
+}
+.destination{
+    height: 50px;
+    background-color: rgb(255, 255, 255);
+    border-bottom: 2px solid #f4f4f4;
+    padding-left: 10px;
+    padding-top: 12px;
+    box-shadow: #f4f4f4;
+}
+.destination p{
+    font-weight: 700;
+}
+.destination p span{
+    font-weight: 300;
+}
+.utilisateur {
+    padding:10px 50px;
+    grid-template-columns: 70px auto;
+    border-bottom: 1px solid #f4f4f4;
+    background-color: rgb(250, 250, 250);
+    padding-right: 20px;
+}
+.utilisateur:hover {
+    background-color: rgb(242, 242, 242);
+}
+.heure{
+    font-size: 13px;
+    color: #b4b4b4;
+}
+.utilisateur img{
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+}
+.utilisateur-message {
+    height: 50px;
+    margin-bottom: 10px;
+    margin-left: 25px;
+}
+.utilisateur-nom{
+    margin-top: 5px;
+    font-weight: 700;
+    font-size: 18px;
+}
+.utilisateur-message p {
+    margin-bottom: 5px;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+}
+ 
+.message-input {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+}
+
+.message-input input[type="text"] {
+  width: 65%;
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  background-color: #eee;
+}
+.message-input input[type="submit"] {
+  width: 7%;
+  margin-left: 1%;
+  padding: 15px;
+  border-radius: 3px;
+  background-color: rgb(199, 199, 199);
+  color: rgb(34, 34, 34);
+}
+.message-head p{
+    font-weight: 700;
+}
