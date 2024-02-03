@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import Header from './components/Header';
+import FooterPage from './components/FooterPage';
+import DetailsAnnonces from './pages/DetailsAnnonces';
+import Annonces from './pages/Annonces';
+import Message from './pages/Message';
+import Profil from './pages/Profil';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-function App() {
+
+function App() {  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Router>
+        <Header/>
+        <Routes>
+          <Route path="/" element={<Annonces />} />
+          <Route path="/Message" element={<Message />} />
+          <Route path="/Profil" element={<Profil />} />
+          <Route path="/DetailsAnnonces/:id" element={<DetailsAnnonces />} />
+        </Routes>
+      </Router>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
