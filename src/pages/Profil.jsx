@@ -2,21 +2,50 @@ import React, { useState } from 'react';
 import '../assets/css/Profil.css';
 import '../assets/css/bootstrap-profiles.min.css';
 import MaVoiture from '../components/MaVoiture';
+import v1 from '../assets/v5.jpg'
+import v2 from '../assets/v2.jpg'
+import { ViewModule, ViewList , ExpandMore } from '@mui/icons-material';
+import Voiture from "../components/Voiture"
+
 
 function Profil() {
+  const wd = [
+    { taille: '100%', one: 'col-lg-4', two: 'col-lg-5', three: 'col-lg-3' },
+    { taille: '33.33%', one: 'col-lg-12', two: 'col-lg-12', three: 'col-lg-12' },
+  ]
+
+  const [width, setWidth] = useState(wd[0]);
+  const large = () => {
+    setWidth(wd[0]);
+  }
+  const block = () => {
+    setWidth(wd[1]);
+  }
+
   const voitures = [
-    { titre: "Mercedes-Benz C63 2017", marque: "Mercedes", model: "C63", kilometrage: "20 000km" },
-    { titre: "Porsche 911 Turbo 2020", marque: "Porsche", model: "911 Turbo", kilometrage: "15 000km" },
-    { titre: "Maserati GranTurismo 2019", marque: "Maserati", model: "GranTurismo", kilometrage: "25 000km" }
-  ];
+    {
+      marque: "Mercedes", modele: "C63", kilometrage: "20 000km", puissance: "300 CV", place: 5,
+      porte: 4, consommation: "8 L/100km", etat_vehicule: "Occasion", transmission: "Automatique",
+      energie: "Essence", categorie: "Sedan", freinage: "ABS", couleur: "Noir",
+      equipements: "Climatisation, GPS, Caméra de recul", images: v1,
+      annonce_id: 1, prix_initial: 25000, date_publication: "2024-01-12", date_fermeture: "2024-02-12",
+      etat_annonce: "Disponible", description: "Une superbe voiture Mercedes-Benz C63 de l'année 2017 en excellent état.",
+      utilisateur_id: 1
+    },
+    {
+      marque: "Porsche", modele: "911 Turbo", kilometrage: "15 000km", puissance: "500 CV", place: 2,
+      porte: 2, consommation: "10 L/100km", etat_vehicule: "Occasion", transmission: "Manuelle",
+      energie: "Essence", categorie: "Sport", freinage: "Céramique", couleur: "Rouge",
+      equipements: "Climatisation, Sièges chauffants, Toit ouvrant", images: v2,
+      annonce_id: 2, prix_initial: 50000, date_publication: "2024-01-13", date_fermeture: "2024-02-13",
+      etat_annonce: "Disponible", description: "Une magnifique Porsche 911 Turbo de l'année 2020 avec un faible kilométrage.",
+      utilisateur_id: 2
+    },
+  ]
 
   const [searchMarque, setSearchMarque] = useState('');
   const [searchTitre, setSearchTitre] = useState('');
 
-  const filteredVoitures = voitures.filter(voiture =>
-    voiture.marque.toLowerCase().includes(searchMarque.toLowerCase()) &&
-    voiture.titre.toLowerCase().includes(searchTitre.toLowerCase())
-  );
 
   return (
     <div className="Profil">
@@ -35,6 +64,7 @@ function Profil() {
                 </div>
               </div>
             </div>
+
             <div className="card mb-4 mb-lg-0">
               <div className="card-body p-0">
                 <ul className="list-group list-group-flush rounded-3">
@@ -52,36 +82,42 @@ function Profil() {
           </div>
 
           <div className="col-lg-8">
-            <div className="card mb-4" id='annonces'>
-              <div className="titre-liste">
-                <span>
-                  <input type="text" placeholder="Rechercher par titre" onChange={(e) => setSearchTitre(e.target.value)} />
-                </span>
+            <div className="row">
+              mes annonces
+            </div>
+            <div className="row">
+            <div className="col-lg-12 col-md-6" id='annonces'>
+              <div className="row mt-2 mb-2">
+                <div>
+                  recent<ExpandMore  sx={{ fontSize:'20px',color:'grey'}}/>
+                  <span style={{float:'right', color:'grey'}}><ViewModule sx={{fontSize : '25px', marginRight:'10px'}} onClick={block} /> <ViewList sx={{fontSize : '25px'}} onClick={large}/></span>
+                </div>
               </div>
-              <div className="card-body">
-                <div className="row">
-                  <div className="titre-liste">
-                    <span>Mes annonces</span>
-                  </div>
-                  {filteredVoitures.map((details, index) => (
-                    <MaVoiture key={index} details={details} />
+              <div className="annonce row">
+                <div className="annonces row">
+                  {voitures.map((details, index) => (
+                    <Voiture key={index} details={details} wd={width} />
                   ))}
                 </div>
               </div>
             </div>
 
-            <div className="card mb-4" id='favoris'>
-              <div className="card-body">
-                <div className="row">
-                  <div className="titre-liste">
-                    <span>Mes favoris</span>
-                  </div>
-                  {filteredVoitures.map((details, index) => (
-                    <MaVoiture key={index} details={details} />
+            <div className="col-lg-12 col-md-6" id='favoris'>
+              <div className="row mt-2 mb-2">
+                <div>
+                  recent<ExpandMore  sx={{ fontSize:'20px',color:'grey'}}/>
+                  <span style={{float:'right', color:'grey'}}><ViewModule sx={{fontSize : '25px', marginRight:'10px'}} onClick={block} /> <ViewList sx={{fontSize : '25px'}} onClick={large}/></span>
+                </div>
+              </div>
+              <div className="annonce row">
+                <div className="annonces row">
+                  {voitures.map((details, index) => (
+                    <Voiture key={index} details={details} wd={width} />
                   ))}
                 </div>
               </div>
             </div>
+          </div>
           </div>
         </div>
       </div>
