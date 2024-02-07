@@ -83,10 +83,10 @@ function Profil() {
 
           <div className="col-lg-8">
             <div className="row">
+            <div className="col-lg-12 col-md-6" id='annonces'>
+            <div className="row">
               mes annonces
             </div>
-            <div className="row">
-            <div className="col-lg-12 col-md-6" id='annonces'>
               <div className="row mt-2 mb-2">
                 <div>
                   recent<ExpandMore  sx={{ fontSize:'20px',color:'grey'}}/>
@@ -103,6 +103,9 @@ function Profil() {
             </div>
 
             <div className="col-lg-12 col-md-6" id='favoris'>
+              <div className="row">
+                mes favoris
+              </div>
               <div className="row mt-2 mb-2">
                 <div>
                   recent<ExpandMore  sx={{ fontSize:'20px',color:'grey'}}/>
