@@ -56,15 +56,6 @@ function DetailsAnnonces() {
     setOpen(false);
   };
 
-  // const annonce = {
-  //   marque: "Mercedes", modele: "C63", kilometrage: "20 000km", puissance: "300 CV", place: 5,
-  //   porte: 4, consommation: "8 L/100km", etat_vehicule: "9", transmission: "9",
-  //   energie: "Essence", categorie: "Sedan", freinage: "7", couleur: "Noir",
-  //   equipements: "Climatisation, GPS, Caméra de recul", images: '',
-  //   annonce_id: 1, prix_initial: 25000, date_publication: "2024-01-12", date_fermeture: "2024-02-12",
-  //   etat_annonce: "Disponible", description: "Une superbe voiture Mercedes-Benz C63 de l'année 2017 en excellent état.",
-  //   utilisateur_id: 1
-  // };
 
   return (
     <>

@@ -336,13 +336,7 @@ function Annonces() {
               <div className="annonce row">
                 <div className="annonces row">
                   {annonces.map((details, index) => (
-                    <>
                     <Voiture key={index} details={details} wd={width} />
-                    <Voiture key={index} details={details} wd={width} />
-                    <Voiture key={index} details={details} wd={width} />
-                    <Voiture key={index} details={details} wd={width} />
-                    <Voiture key={index} details={details} wd={width} />
-                    </>
                   ))}
                 </div>
               </div>

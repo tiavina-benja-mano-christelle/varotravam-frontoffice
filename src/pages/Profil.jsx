@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../assets/css/Profil.css';
 import '../assets/css/bootstrap-profiles.min.css';
 import MaVoiture from '../components/MaVoiture';
@@ -6,12 +6,16 @@ import v1 from '../assets/v5.jpg'
 import v2 from '../assets/v2.jpg'
 import { ViewModule, ViewList , ExpandMore } from '@mui/icons-material';
 import Voiture from "../components/Voiture"
+import AnnonceService from '../services/annonceService';
 
 
 function Profil() {
+  const [favoris, setFavoris] = useState([]);
+  const [annonces, setAnnonces] = useState([]);
+
   const wd = [
     { taille: '100%', one: 'col-lg-4', two: 'col-lg-5', three: 'col-lg-3' },
-    { taille: '33.33%', one: 'col-lg-12', two: 'col-lg-12', three: 'col-lg-12' },
+    { taille: '33.33%', one: 'col-lg-12', two: 'col-lg-12', three: 'col-lg-12' }
   ]
 
   const [width, setWidth] = useState(wd[0]);
@@ -22,30 +26,28 @@ function Profil() {
     setWidth(wd[1]);
   }
 
-  const voitures = [
-    {
-      marque: "Mercedes", modele: "C63", kilometrage: "20 000km", puissance: "300 CV", place: 5,
-      porte: 4, consommation: "8 L/100km", etat_vehicule: "Occasion", transmission: "Automatique",
-      energie: "Essence", categorie: "Sedan", freinage: "ABS", couleur: "Noir",
-      equipements: "Climatisation, GPS, Caméra de recul", images: v1,
-      annonce_id: 1, prix_initial: 25000, date_publication: "2024-01-12", date_fermeture: "2024-02-12",
-      etat_annonce: "Disponible", description: "Une superbe voiture Mercedes-Benz C63 de l'année 2017 en excellent état.",
-      utilisateur_id: 1
-    },
-    {
-      marque: "Porsche", modele: "911 Turbo", kilometrage: "15 000km", puissance: "500 CV", place: 2,
-      porte: 2, consommation: "10 L/100km", etat_vehicule: "Occasion", transmission: "Manuelle",
-      energie: "Essence", categorie: "Sport", freinage: "Céramique", couleur: "Rouge",
-      equipements: "Climatisation, Sièges chauffants, Toit ouvrant", images: v2,
-      annonce_id: 2, prix_initial: 50000, date_publication: "2024-01-13", date_fermeture: "2024-02-13",
-      etat_annonce: "Disponible", description: "Une magnifique Porsche 911 Turbo de l'année 2020 avec un faible kilométrage.",
-      utilisateur_id: 2
-    },
-  ]
 
   const [searchMarque, setSearchMarque] = useState('');
   const [searchTitre, setSearchTitre] = useState('');
 
+  useEffect(() => {
+    fetchData();
+  }, [])
+
+  const fetchData=()=>{
+    AnnonceService.favoris()
+    .then(result => {
+      if (result.success) {
+        setFavoris(result.data);
+      }
+    });
+    AnnonceService.mesAnnonces()
+    .then(result => {
+      if (result.success) {
+        setAnnonces(result.data);
+      }
+    })
+  }
 
   return (
     <div className="Profil">
@@ -95,7 +97,7 @@ function Profil() {
               </div>
               <div className="annonce row">
                 <div className="annonces row">
-                  {voitures.map((details, index) => (
+                  {favoris.map((details, index) => (
                     <Voiture key={index} details={details} wd={width} />
                   ))}
                 </div>
@@ -114,7 +116,7 @@ function Profil() {
               </div>
               <div className="annonce row">
                 <div className="annonces row">
-                  {voitures.map((details, index) => (
+                  {annonces.map((details, index) => (
                     <Voiture key={index} details={details} wd={width} />
                   ))}
                 </div>
