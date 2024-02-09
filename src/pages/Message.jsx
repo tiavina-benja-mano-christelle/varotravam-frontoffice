@@ -37,7 +37,6 @@ function Message() {
     { id: 3, id_vendeur: 1, id_client: 2, id_envoyeur: 1, date_envoye: '2024-01-12', message: 'Je suis intéressé par votre annonce.', id_annonce: 1 },
     { id: 4, id_vendeur: 1, id_client: 2, id_envoyeur: 2, date_envoye: '2024-01-12', message: 'Parfait ! Discutons des détails.', id_annonce: 1 },
     { id: 5, id_vendeur: 1, id_client: 2, id_envoyeur: 1, date_envoye: '2024-01-12', message: 'Salut ! Comment ça va ? J\'espère que ta journée se déroule bien. J\'ai vu ton annonce et je suis vraiment intéressé. Peux-tu me donner plus de détails ?', id_annonce: 1 },
-    
   ];
   return (
     <div className="message-container">

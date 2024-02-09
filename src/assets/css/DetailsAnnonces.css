@@ -23,6 +23,7 @@
     margin-top: 0;
     margin-right: 0;
     border-radius: 5px;
+    background: cover;
 }
 .description {
     height: 85px;
@@ -66,7 +67,9 @@
 .details-model{
     padding: 5px;
 }
-
+.col1 span{
+    margin-left: 5px;
+}
 .table-description{
     padding-top: 20px;
 }
@@ -79,7 +82,7 @@ hr{
 }
 .ligne{
     display: grid;
-    grid-template-columns: 5% 75% auto;
+    grid-template-columns: 70% auto;
     border-bottom:1px solid #f4f4f4;
     padding:10px;
 }

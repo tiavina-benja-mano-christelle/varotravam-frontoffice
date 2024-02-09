@@ -112,8 +112,8 @@
   width: 65%;
   padding: 15px;
   border-radius: 10px;
-  border: none;
-  background-color: #eee;
+  border:1px solid #eee;
+  background-color: #ffffff;
 }
 .message-input input[type="submit"] {
   width: 7%;

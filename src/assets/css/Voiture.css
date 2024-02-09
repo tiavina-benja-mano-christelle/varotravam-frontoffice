@@ -1,90 +1,74 @@
-/* CSS pour la section Voiture */
 .car .voiture {
-    display: grid;
-    grid-template-columns: 30% 40% 30%;
-    height: 215px;
-    width: 100%;
-    margin-bottom: 20px;
+    height: max-content;
+    min-width: 100%;
+    margin-top: 20px;
 }
-.car{
-	font-size:14px;
-}
-.voiture-image {
-  position: relative;
+
+.car {
+    font-size: 14px;
 }
 
 .camera {
-  position: absolute;
-  top: 4%;
-  right: 3%;
-  color: ;
-  font-size: 15px;
-  z-index: 2;
-  cursor: pointer;
-  background:#ffffff8a;
-  padding:3px;
-  border-radius:3px;
+    position: absolute;
+    top: 4%;
+    right: 8%;
+    font-size: 15px;
+    z-index: 2;
+    cursor: pointer;
+    background: #ffffff8a;
+    padding: 3px;
+    border-radius: 3px;
 }
-.camera span{
-	font-size:12px;
-	
-	font-weight:bold;
-	padding:3px;
+
+.camera span {
+    font-size: 12px;
+    font-weight: bold;
+    padding: 3px;
 }
 
 .star-icon {
-  position: absolute;
-  top: 4%;
-  left: 3%;
-  color: #ffffff8a;
-  font-size: 2rem;
-  z-index: 2;
-  cursor: pointer;
+    position: absolute;
+    top: 4%;
+    left: 7%;
+    color: #ffffffc4;
+    font-size: 2rem;
+    z-index: 2;
+    cursor: pointer;
 }
 
 .star-icon.active {
-  color: yellow;
+    color: yellow;
 }
-.voiture-prix{
-	font-size:18px;
-	width:max-content;
-	padding:3px 15px;
-    padding-top: 5px;
-	margin-top:15px;
-	background:#ffa537;
-	color:white;
-	border-radius:5px;
+
+.voiture-prix {
+    font-size: 17px;
+    width: max-content;
+    padding: 1px 12px;
+    padding-top: 2px;
+    margin-top: 15px;
+    background: #E8AA42;
+    color: rgb(243, 243, 243);
+    border-radius: 2px;
 }
+
 .car .voiture-image {
-    margin: 10px;
-    height: 195px;
-    width: auto;
-    background-color: #d5d5d5;
     border-radius: 5px;
+    position: relative;
 }
 
 .car .voiture-voir {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 10px;
-    height: auto;
-    width: auto;
     border-left: 2px solid #f4f4f4;
 }
 
 .car .btn {
-    width: 80%;
-    margin: 5px;
+    width: 100%;
+    margin: 5px 0px;
 }
 
-.car .voiture-description {
-    padding: 10px;
-}
+.car .voiture-description {}
 
 .car .voiture-titre {
-    font-size:16px;
+    font-size: 16px;
     color: rgb(0, 89, 255);
     font-weight: 500;
 }
@@ -120,16 +104,22 @@
 
 .car .voiture-image img {
     background: cover;
+    width: 100%;
+    height: 185px;
+    object-fit: cover;
+    border-radius: 5px;
+    z-index: 1;
 }
 
-.voiture .supprimer{
+.voiture .supprimer {
     padding: 5px 50px;
     border-radius: 5px;
     background-color: rgb(255, 56, 56);
     color: rgb(255, 255, 255);
     border: none;
 }
-.voiture .supprimer:hover{
+
+.voiture .supprimer:hover {
     background-color: rgb(255, 255, 255);
     color: red;
     border: 2px solid red;

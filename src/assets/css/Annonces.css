@@ -1,27 +1,36 @@
 .Annonces{
     font-size:14px;
 }
-.Annonces .breadcrumb li span {
-    background: rgb(234, 234, 234);
-    color: rgb(113, 113, 113);
-    padding: 5px 10px 7px;
-    border-radius: 3px;
-    margin-left: 10px;
-}
-
 .fond {
     position: relative;
     background-image: url('../fond.jpg');
     background-size: cover;
     background-position: center;
     object-fit: cover;
-    height: 100%; /* Ajout de la hauteur ici */
+    height: 200px;
     width: 100%;
 }
-.search-voiture input,select{
+.filtre-titre{
+    padding: 10px 15px;
+    color: white;
+    background-color:rgb(26, 26, 26)
+}
+.search-voiture {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: 50%;
+    padding: 10px 10px;
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.all-colors{
+    display: inline-block;
+}
+.search-voiture input{
     height: 45px;
-    padding: 5px;
-    margin-top: 15px;
     border: 1px solid rgb(203, 203, 203);
 }
 .search-voiture input[type=text]:hover{
@@ -29,120 +38,40 @@
     border-radius: 1px;
 }
 .search-voiture input[type=text] {
-    width: 88%;
     border-radius: 3px;
     border: 1px rgb(232, 232, 232) solid;
 }
-.search-voiture select {
-    width:10%;
-    border:'none';
-}
 .search-voiture .icon-search {
-    padding: 14.6px;
-    width: 10%;
+    height: 45px;
+    background-color: #1F4690;
+}
+.search-voiture .icon-search .icon{
     color: white;
-    background-color: rgb(58, 58, 58);
-    font-family: sans-serif;
+    margin-top: 10px;
 }
-
-.search-voiture {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%, 50%);
-    width: 50%;
-    height: 75px;
-    background-color: white;
-    border-radius: 3px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.Annonces .breadcrumb {
-    padding: 5px;
-}
-
-.Annonces .breadcrumb li span span {
-    color: rgb(65, 65, 65);
-    font-weight: bold;
-    margin-left: 5px;
-    padding: 5px;
-    cursor: pointer;
-}
-
-.Annonces .DateTri {
-    padding: 10px;
-}
-
-.Annonces .DateTri select {
-    padding: 10px 10px;
-    background: rgb(234, 234, 234);
-    color: rgb(113, 113, 113);
-    float: right;
-    border-color: rgb(217, 217, 217);
-}
-
 .Annonces .annonce-filtre {
-    display: grid;
-    grid-template-columns: 25% 75%;
     background-color: #f4f4f4;
     height: max-content;
 }
-
-.Annonces .titre-filtre {
-    color: rgb(42, 42, 42);
-    font-size: 18px;
-    padding: 12px;
-    border-bottom: 5px solid #f4f4f4;
+.page-annonce{
+    margin-top: 60px;
+    padding: 0px 10%;
 }
-.Annonces .carre {
-    width: 40%;
-    height: 90px;
-    margin: 10px;
-    margin-bottom: 0;
-    background-color: #e5e5e591; 
+.Annonces .filtre {
     border-radius: 5px;
 }
 .Annonces .annonce {
     background-color: white;
-    margin-left: 20px;
+    border-radius: 2px;
 }
-
-.filtre .carre {
-    display: inline-block;
-}
-.page-annonce{
-    padding: 0px 10%;
-}
-.Annonces .date-tri {
-    float: right;
-    margin-right: 10px;
-    background-color: #f4f4f4;
-    padding: 5px;
-    border: none;
-    padding: 5px 20px;
-}
-.Annonces .filtre-name{
-    color: rgb(100,100,100);
-}
-
-.Annonces .filtre {
-    background-color: white;
-    align-items: center;
-    justify-content: center;
-    border-radius: 5px;
-}
-
-.Annonces .filtre-taille {
-    margin-top: 10px;
-}
-
-.Annonces .annonces {
-    padding: 20px;
-}
-
 .Annonces .filtre-prix input {
-    width: 43%;
+    width: 40%;
+    margin: 5px;
     text-align: center;
     height: 40px;
-    border: 1px solid #b7b7b7;
+    border: 1px solid #d0d0d0;
+    color: rgb(0, 0, 0);
+}
+.annonces{
+    display: inline-block;
 }

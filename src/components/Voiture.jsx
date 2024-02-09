@@ -6,7 +6,7 @@ import StarBorderIcon from '@mui/icons-material/Star';
 import LocalOffer from '@mui/icons-material/LocalOffer';
 import Camera from '@mui/icons-material/CameraAlt';
 
-const Voiture = ({ details }) => {
+const Voiture = ({ details , wd}) => {
   const {
     marque,
     modele,
@@ -29,36 +29,45 @@ const Voiture = ({ details }) => {
     date_fermeture,
     etat_annonce,
     description,
-    utilisateur_id
+    utilisateurId,
+    vehicule,
+    prixInitial
   } = details;
   const [isStarActive, setStarActive] = useState(false);
 
   const handleStarClick = () => {
     setStarActive(!isStarActive);
   };
-  return (
-    <div className="car">
-      <div className="voiture">
-    <div className="voiture-image">
-      <StarBorderIcon
-        className={`star-icon ${isStarActive ? 'active' : ''}`}
-        onClick={handleStarClick}
-      />
-      
-       <p className="camera">
-       <Camera/>
-       <span>5</span>
-       </p>
-      
-      <img
-        src={images}
-        alt=""
-        style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '5px', zIndex: 1 }}
-      />
-    </div>
 
-        <div className="voiture-description">
-          <div className="voiture-titre">{marque} {modele}</div>
+  const style = {
+    width : wd.taille
+  }
+
+  const one = "voiture-image " + wd.one;
+  const two = "voiture-description " + wd.two;
+  const three = "voiture-voir " + wd.three;
+
+  return (
+    <div className="car" style={style}>
+      <div className="voiture row">
+        <div className={one}>
+          <StarBorderIcon
+            className={`star-icon ${isStarActive ? 'active' : ''}`}
+            onClick={handleStarClick}
+          />
+
+          <p className="camera">
+            <Camera />
+            <span>{vehicule.images.length}</span>
+          </p>
+
+          <img
+            src={vehicule.images[0]}
+          />
+        </div>
+
+        <div className={two}>
+          <div className="voiture-titre">{vehicule.marque} {vehicule.modele}</div>
 
           <div className="table-description">
             <table border={1}>
@@ -69,9 +78,9 @@ const Voiture = ({ details }) => {
                   <td>Place</td>
                 </tr>
                 <tr className='table-header'>
-                  <td>{kilometrage}</td>
-                  <td>{puissance}</td>
-                  <td>{place}</td>
+                  <td>{vehicule.kilometrage}</td>
+                  <td>{vehicule.puissance}</td>
+                  <td>{vehicule.place}</td>
                 </tr>
                 <tr>
                   <td>Porte</td>
@@ -79,22 +88,22 @@ const Voiture = ({ details }) => {
                   <td>État du véhicule</td>
                 </tr>
                 <tr className='table-header'>
-                  <td>{porte}</td>
-                  <td>{consommation}</td>
-                  <td>{etat_vehicule}</td>
+                  <td>{vehicule.porte}</td>
+                  <td>{vehicule.consommation}</td>
+                  <td>{vehicule.etat} / 10</td>
                 </tr>
               </tbody>
             </table>
           </div>
-          
+
           <div className="voiture-prix">
-          	 20.000.000 MGA  <LocalOffer style={{fontSize:'18px',marginTop:'-4px'}}/>
+            {prixInitial.toLocaleString()} MGA  <LocalOffer style={{ fontSize: '18px', marginTop: '-4px' }} />
           </div>
         </div>
 
-        <div className="voiture-voir">
-          <Link className="btn1 btn btn-primary" to={{ pathname: `/DetailsAnnonces`, state: { details } }}>Voir les details</Link>
-          <Link className="btn2 btn btn-primary" to={`/Message/${utilisateur_id}`}>Contacter</Link>
+        <div className={three}>
+          <Link className="btn1 btn btn-primary" to={{ pathname: `/DetailsAnnonces/${details.id}`, state: { details } }}>Voir les details</Link>
+          <Link className="btn2 btn btn-primary" to={`/Message/${utilisateurId}`}>Contacter</Link>
         </div>
       </div>
     </div>
