@@ -30,8 +30,8 @@ const Footer = () => {
                             <span className="address1">
                                 <p><User/>  <strong>ETU001946</strong></p>
                                 <p><User/>  ETU002025</p>
-                                <p><User/>  ETU002025</p>
-                                <p><User/>  ETU002060</p>
+                                <p><User/>  ETU002023</p>
+                                <p><User/>  ETU002064</p>
                             </span>
                         </div>
                     </div>
