@@ -70,15 +70,6 @@ function DetailsAnnonces() {
               />
             </div>
             <div className="autreImage">
-              {[1, 2, 3, 4].map((index) => (
-                <div key={index} className="img">
-                  <img
-                    src={v1}
-                    alt=""
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '5px', zIndex: 1 }}
-                  />
-                </div>
-              ))}
             </div>
             <br />
             <div className="voiture-etat">
@@ -152,11 +143,11 @@ function DetailsAnnonces() {
                 <span className="col2">{annonce.vehicule.porte}</span>
               </div>
             </div>
-            {annonce.vehicule.equipements.map((element, index) => 
+            {/* {annonce.vehicule.equipements.map((element, index) => 
               <div className="details-model">
                 <p className="head-model">{element}</p>
               </div>
-              )}
+              )} */}
             <div className="contact">
               <span className="prix">{annonce.prixInitial} Ariary</span>
               <a href="#" className="contacter">Contacter le vendeur</a>
