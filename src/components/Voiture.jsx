@@ -6,6 +6,7 @@ import StarBorderIcon from '@mui/icons-material/Star';
 import LocalOffer from '@mui/icons-material/LocalOffer';
 import Camera from '@mui/icons-material/CameraAlt';
 import img from '../assets/default.jpg';
+import v1 from '../assets/v5.jpg'
 
 const Voiture = ({ details , wd}) => {
   const {
@@ -63,7 +64,7 @@ const Voiture = ({ details , wd}) => {
           </p>
 
           <img
-            src={(vehicule.images !== null && vehicule.images.length!==0) ? vehicule.images[0] : img}
+            src={(vehicule.images !== null && vehicule.images.length!==0) ? vehicule.images[0] : v1}
           />
         </div>
 
