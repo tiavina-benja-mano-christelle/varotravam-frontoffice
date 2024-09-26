@@ -64,7 +64,7 @@ const Voiture = ({ details , wd}) => {
           </p>
 
           <img
-            src={(vehicule.images !== null && vehicule.images.length!==0) ? vehicule.images[0] : v1}
+            src={v1}
           />
         </div>
 
